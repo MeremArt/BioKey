@@ -3,7 +3,7 @@ use anchor_lang::prelude::*;
 use crate::state::UserAccountState;
 
 #[derive(Accounts)]
-
+#[instruction(hashed_fingerprint: [u8; 32])]
 pub struct CreateUserAccount<'info>{
     #[account(mut)]
     pub user: Signer<'info>,
@@ -33,7 +33,7 @@ impl <'info>CreateUserAccount<'info>{
         user_account.hashed_fingerprint = hashed_fingerprint;
         user_account.public_key = ctx.accounts.user.key();
         user_account.created_at = Clock::get()?.unix_timestamp;
-        user_account.bump = *ctx.bumps.get("user_account").unwrap();
+        user_account.bump = ctx.bumps.user_account;
         Ok(())
     }
 }
