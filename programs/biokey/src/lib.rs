@@ -18,4 +18,11 @@ pub mod biokey {
     ) -> Result<()> {
         instructions::create_or_update_auth_state::handler(ctx, is_authenticated)
     }
+
+    pub fn create_user_account(
+        ctx: Context<CreateUserAccount>,
+        hashed_fingerprint: [u8; 32],
+    ) -> Result<()> {
+        instructions::create_user_account::handler(ctx, hashed_fingerprint)
+    }
 }
