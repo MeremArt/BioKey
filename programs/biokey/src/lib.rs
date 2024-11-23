@@ -35,4 +35,10 @@ pub mod biokey {
     ) -> Result<bool> {
         instructions::validate_fingerprint::handler(ctx, provided_hashed_fingerprint)
     }
+    pub fn check_authentication(
+        ctx: Context<CheckAuthentication>,
+
+    )-> Result<bool>{
+        instructions::check_authentication::handler(ctx)
+    }
 }
