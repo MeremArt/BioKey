@@ -1,5 +1,7 @@
-pub mod authState;
+// src/state/mod.rs
 pub mod user_account_state;
 
-pub use authState::*;
+pub mod AuthState; // If you need to make it public // Module names should be lowercase
+
 pub use user_account_state::*;
+ // Export from authstate module
