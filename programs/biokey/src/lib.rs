@@ -3,7 +3,7 @@ use anchor_lang::prelude::*;
 declare_id!("AeR9zRYNF7MGA35NbYUt1suVqNC3Uj4DaNhmGzEwNHAb");
 
 pub mod state;
-
+pub mod error;
 pub mod instructions;
 
 use instructions::*;
@@ -40,5 +40,9 @@ pub mod biokey {
 
     )-> Result<bool>{
         instructions::check_authentication::handler(ctx)
+    }
+
+    pub fn fetch_user_fingerprint(ctx: Context<FetchUserFingerprint>) -> Result<[u8; 32]> {
+        instructions::fetch_user_fingerprint::handler(ctx)
     }
 }
