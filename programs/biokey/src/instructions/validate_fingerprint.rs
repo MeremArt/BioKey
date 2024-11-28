@@ -15,7 +15,7 @@ pub struct ValidateFingerprint<'info>{
 
 }
 
-pub fn handler(
+pub fn handleriv(
     ctx: Context<ValidateFingerprint>,
     provided_hashed_fingerprint: [u8; 32],
 )-> Result<bool>{

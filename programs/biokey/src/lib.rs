@@ -1,9 +1,9 @@
 use anchor_lang::prelude::*;
 
-declare_id!("AeR9zRYNF7MGA35NbYUt1suVqNC3Uj4DaNhmGzEwNHAb");
+declare_id!("5mKmv9YrUmPZKkZmcGdeiBnF4dKYsJkZPmttahBUvWth");
 
 pub mod state;
-pub mod error;
+mod error;
 pub mod instructions;
 
 use instructions::*;
@@ -18,14 +18,14 @@ pub mod biokey {
         ctx: Context<CreateOrUpdateAuthState>,
         is_authenticated: bool,
     ) -> Result<()> {
-        instructions::create_or_update_auth_state::handler(ctx, is_authenticated)
+        instructions::create_or_update_auth_state::handlerii(ctx, is_authenticated)
     }
 
     pub fn create_user_account(
         ctx: Context<CreateUserAccount>,
         hashed_fingerprint: [u8; 32],
     ) -> Result<()> {
-        instructions::create_user_account::handler(ctx, hashed_fingerprint)
+        instructions::create_user_account::handleriii(ctx, hashed_fingerprint)
 
     }
 
@@ -33,16 +33,17 @@ pub mod biokey {
         ctx: Context<ValidateFingerprint>,
         provided_hashed_fingerprint: [u8; 32],
     ) -> Result<bool> {
-        instructions::validate_fingerprint::handler(ctx, provided_hashed_fingerprint)
+        instructions::validate_fingerprint::handleriv(ctx, provided_hashed_fingerprint)
     }
     pub fn check_authentication(
         ctx: Context<CheckAuthentication>,
 
     )-> Result<bool>{
-        instructions::check_authentication::handler(ctx)
+        instructions::check_authentication::handleri(ctx)
     }
 
     pub fn fetch_user_fingerprint(ctx: Context<FetchUserFingerprint>) -> Result<[u8; 32]> {
         instructions::fetch_user_fingerprint::handler(ctx)
     }
+    
 }

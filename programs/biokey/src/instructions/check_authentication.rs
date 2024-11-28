@@ -17,7 +17,7 @@ pub struct CheckAuthentication<'info>{
        pub auth_state: Account<'info, AuthState>
 }
 
-pub fn handler(ctx: Context<CheckAuthentication>) -> Result<bool> {
+pub fn handleri(ctx: Context<CheckAuthentication>) -> Result<bool> {
     let auth_state = &ctx.accounts.auth_state;
 
     if auth_state.is_authenticated {

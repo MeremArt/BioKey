@@ -18,7 +18,7 @@ pub struct CreateUserAccount<'info> {
     pub system_program: Program<'info, System>,
 }
 
-pub fn handler(
+pub fn handleriii(
     ctx: Context<CreateUserAccount>,
     hashed_fingerprint: [u8; 32],
 ) -> Result<()> {

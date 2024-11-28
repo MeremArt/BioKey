@@ -18,7 +18,7 @@ pub struct CreateOrUpdateAuthState<'info> {
     pub system_program: Program<'info, System>,
 }
 
-pub fn handler(
+pub fn handlerii(
     ctx: Context<CreateOrUpdateAuthState>,
     is_authenticated: bool,
 ) -> Result<()> {
