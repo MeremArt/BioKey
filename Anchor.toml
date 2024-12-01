@@ -4,15 +4,18 @@
 resolution = true
 skip-lint = false
 
+[programs.localnet]
+biokey = "HXEPyKzidcNAbnNWY1DMu433eBcN4nP1m381QdVKQe2S"
+
 [programs.devnet]
-biokey = "5mKmv9YrUmPZKkZmcGdeiBnF4dKYsJkZPmttahBUvWth"
+biokey = "HXEPyKzidcNAbnNWY1DMu433eBcN4nP1m381QdVKQe2S"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Devnet"
-wallet = "~/.config/solana/id.json"
+cluster = "devnet"
+wallet = "~/.config/solana/merem.json"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
