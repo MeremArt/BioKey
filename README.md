@@ -15,10 +15,12 @@ Biokey is a secure on-chain identity protocol designed to empower users with dec
 ---
 
 ## Features
-- **User Account Creation:** Create accounts using hashed fingerprint data stored securely on Solana.
-- **Fingerprint Validation:** Verify user identity through stored biometric data.
-- **Data Retrieval:** Fetch and display user-specific biometric data.
-- **Decentralized Architecture:** Leverages Solana's high-performance blockchain for reliability and scalability.
+
+- **Account Creation:** Securely store fingerprint data on Solana via hashed representations.
+- **Validation:** Confirm identity using stored fingerprint data.
+- **Data Retrieval:** Fetch and verify user biometric data seamlessly.
+- **Decentralized Protocol:** Designed to leverage Solana's high-speed, low-cost infrastructure.
+- **Rust Program:** Secure, fast, and efficient backend implementation.
 
 
 ---
@@ -26,9 +28,9 @@ Biokey is a secure on-chain identity protocol designed to empower users with dec
 ## Getting Started
 
 ### Prerequisites
-- **Node.js:** Ensure you have Node.js (>=16) installed.  
-- **Solana CLI:** Install the Solana CLI for blockchain interactions.
-- **Wallet Adapter:** Use a supported Solana wallet.
+- **Rust:** Install Rust and Cargo ([Rust installation guide](https://www.rust-lang.org/tools/install)).
+- **Anchor Framework:** Ensure Anchor CLI is installed. Follow the [official guide](https://book.anchor-lang.com/getting_started/installation.html).
+- **Solana CLI:** Install the Solana CLI for blockchain interactions ([Solana CLI installation guide](https://docs.solana.com/cli/install-solana-cli-tools)).
 
 ---
 
@@ -52,13 +54,14 @@ Fetch Fingerprint
 
 Program ID: HXEPyKzidcNAbnNWY1DMu433eBcN4nP1m381QdVKQe2S
 
-IDL Location: ./biokey.json
+IDL: Generated during anchor build and located in target/idl/biokey.json.
 
-Cluster: Devnet (Default)
+Cluster: Devnet (default).
 
-### Program Structure
+### Key Methods
 
-Account Creation: Stores hashed fingerprint data on-chain.
-Fingerprint Validation: Matches provided fingerprint data against stored data.
-Fingerprint Fetching: Retrieves fingerprint data for UI display.
+create_user_account: Initialize a new user account with biometric data.
 
+validate_fingerprint: Check if the provided fingerprint matches stored data.
+
+fetch_user_fingerprint: Retrieve the user's stored fingerprint.
