@@ -1,4 +1,4 @@
-# Biokey Identity Protocol
+# Biokey 
 
 Biokey is a secure on-chain identity protocol designed to empower users with decentralized identity management using biometrics. Built on the Solana blockchain, Biokey enables users to create accounts, validate their identity through fingerprint data, and retrieve stored information securely and efficiently.
 
